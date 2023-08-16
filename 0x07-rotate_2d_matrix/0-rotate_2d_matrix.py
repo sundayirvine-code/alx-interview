@@ -15,7 +15,6 @@ def rotate_2d_matrix(matrix):
             matrix[x].append(val)
             y -= 1
 
-        print(rotated_matrix)
         l -= 1
         x += 1
 
