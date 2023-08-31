@@ -10,24 +10,27 @@ def island_perimeter(grid):
     Returns:
         int: The perimeter of the island.
     """
-    perimeter=0
-
+    if not grid:
+        return 0
+    
     rows = len(grid)
     cols = len(grid[0])
-
-    for row_index, row in enumerate(grid):
-        for col_index, val in enumerate(row):
-            if val == 1:
-                perimeter += 4  # Start with 4 for each land cell
-
-                # Check the right cell
-                next_col = col_index + 1
-                if next_col < cols and row[next_col] == 1:
-                    perimeter -= 2
-
-                # Check the below cell
-                next_row = row_index + 1
-                if next_row < rows and grid[next_row][col_index] == 1:
-                    perimeter -= 2
-
+    
+    perimeter = 0
+    
+    for row in range(rows):
+        for col in range(cols):
+            if grid[row][col] == 1:
+                perimeter += 4  # Each land cell contributes 4 to the perimeter
+                
+                # Check adjacent cells and subtract 1 for each adjacent land cell
+                if row > 0 and grid[row - 1][col] == 1:
+                    perimeter -= 1
+                if row < rows - 1 and grid[row + 1][col] == 1:
+                    perimeter -= 1
+                if col > 0 and grid[row][col - 1] == 1:
+                    perimeter -= 1
+                if col < cols - 1 and grid[row][col + 1] == 1:
+                    perimeter -= 1
+                    
     return perimeter
