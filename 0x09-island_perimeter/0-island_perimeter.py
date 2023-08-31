@@ -9,18 +9,6 @@ def island_perimeter(grid):
         
     Returns:
         int: The perimeter of the island.
-
-    Algorithm:
-        1. Input: The function takes a 2D grid as input, where each cell is either 0 (water) or 1 (land).
-        2. Initialization: Initialize a variable perimeter to keep track of the cumulative perimeter of the island. Also, determine the number of rows and columns in the grid.
-        3. Iterating Through Rows and Columns: Iterate through each cell in the grid.
-            a. For each cell (identified by its row and column index):
-                If the cell's value is 0, continue to the next cell (it's water).
-                If the cell's value is 1 (land):
-                    Add 4 to the perimeter to account for the four sides of the cell.
-                    Check if there's a cell to the right (within the same row) and if that cell is also a land cell. If it is, subtract 2 from the perimeter (since the right side of the current cell is shared with the adjacent cell).
-                    Check if there's a cell below (in the next row) and if that cell is also a land cell. If it is, subtract 2 from the perimeter (since the bottom side of the current cell is shared with the adjacent cell).
-        Return Result: After iterating through all cells, return the final perimeter as the result.
     """
     perimeter=0
 
