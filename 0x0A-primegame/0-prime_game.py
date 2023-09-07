@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""0. Prime Game - Maria and Ben are playing a game"""
 
 def is_prime(num):
     if num < 2:
